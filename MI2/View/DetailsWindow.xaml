@@ -1,0 +1,29 @@
+﻿<Window x:Class="MI2.View.DetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MI2.View"
+        mc:Ignorable="d"
+            Title="Подробности" Height="400" Width="500"  Icon="/Assets/icon.ico" WindowStartupLocation="CenterScreen" WindowStyle="None"  ResizeMode="CanMinimize" Background="#FFF7DAB6">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16"/>
+                <TextBlock Text="Описание" FontWeight="Bold" FontSize="16"/>
+                <TextBlock Text="{Binding Descriprion}" FontSize="16" TextWrapping="Wrap"/>
+               
+            </StackPanel>
+        </ScrollViewer>
+
+        <Button Content="Закрыть" Click="CloseButton_Click"
+            
+            VerticalAlignment="Bottom" HorizontalAlignment="Right"
+            FontWeight="Bold"  Background="#FFC2F3F0" FontSize="16" FontFamily="Arial Black"/>
+    </Grid>
+</Window>

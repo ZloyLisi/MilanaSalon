@@ -1,0 +1,35 @@
+﻿<Window x:Class="MI2.View.DetailsOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MI2.View"
+        mc:Ignorable="d"
+        Title="Детали заказа" Height="550" Width="400"  Icon="/Assets/icon.ico" WindowStartupLocation="CenterScreen" MinHeight="550" MinWidth="400" MaxHeight="550" MaxWidth="400" Background="#FFF7DAB6">
+    <StackPanel Margin="10">
+        <Label FontFamily="Arial Black">Название платья:</Label>
+        <Label Content="{Binding Product.Name}"></Label>
+        <Label FontFamily="Arial Black">Имя заказчика:</Label>
+        <Label Content="{Binding User.Name}" FontWeight="Bold" />
+        <Label FontFamily="Arial Black">Фамиля заказчика:</Label>
+        <Label Content="{Binding User.Surname}" />
+        <Label FontFamily="Arial Black">Отчество заказчика:</Label>
+        <Label Content="{Binding User.Patronymic}" />
+        <Label FontFamily="Arial Black">Email заказчика:</Label>
+        <Label Content="{Binding User.Email}" />
+        <Label FontFamily="Arial Black">Номер телефона заказчика:</Label>
+        <Label Content="{Binding User.Phone}" />
+        <Label FontFamily="Arial Black">Обхват бедер:</Label>
+        <Label Content="{Binding Ob}" />
+        <Label FontFamily="Arial Black">Оюхват талии:</Label>
+        <Label Content="{Binding Ot}" />
+        <Label FontFamily="Arial Black">Обхват груди:</Label>
+        <Label Content="{Binding Og}" />
+        
+            <Button Content="Закрыть" Click="CloseWindow"  FontFamily="Arial Black" FontSize="16" Margin="10"  Background="#FFC2F3F0" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+           
+
+        
+        <!-- Другие детали заказа... -->
+    </StackPanel>
+</Window>

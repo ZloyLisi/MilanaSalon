@@ -1,0 +1,28 @@
+﻿<Window x:Class="MI2.View.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MI2.View"
+        mc:Ignorable="d"
+       Title="Добавление пользователя" Height="410" Width="370" MaxHeight="410" MaxWidth="370" MinHeight="410" MinWidth="370" Background="#FFF7DAB6"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"  Icon="/Assets/icon.ico">
+    <StackPanel Margin="10">
+        <Label Content="Роль:" FontFamily="Arial Black"/>
+        <ComboBox x:Name="RoleComboBox" Margin="5">
+            <ComboBoxItem Content="Администратор" Tag="1"/>
+            <ComboBoxItem Content="Пользователь" Tag="2"/>
+        </ComboBox>
+        <Label Content="Имя:" FontFamily="Arial Black"/>
+        <TextBox x:Name="NameTextBox" Margin="5"/>
+        <Label Content="Фамилия:" FontFamily="Arial Black"/>
+        <TextBox x:Name="SurnameTextBox" Margin="5"/>
+        <Label Content="Отчество:" FontFamily="Arial Black"/>
+        <TextBox x:Name="PatronymicTextBox" Margin="5"/>
+        <Label Content="Логин:" FontFamily="Arial Black"/>
+        <TextBox x:Name="LoginTextBox" Margin="5"/>
+        <Label Content="Пароль:" FontFamily="Arial Black"/>
+        <PasswordBox x:Name="PasswordBox" Margin="5"/>
+        <Button Content="Сохранить" Click="SaveButton_Click" FontFamily="Arial Black" FontSize="16" Margin="5" Background="#FFC2F3F0" HorizontalAlignment="Center"/>
+    </StackPanel>
+</Window>

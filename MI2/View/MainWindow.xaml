@@ -1,0 +1,89 @@
+﻿<Window x:Class="MI2.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MI2"
+        mc:Ignorable="d"
+                  Title="Главное окно" Height="600" Width="1230" MinHeight="600"  Icon="/Assets/icon.ico" MinWidth="1230" WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid Background="#FFF7DAB6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <Image Height="500" Source="/Assets/Graf.png"></Image>
+
+        <ListBox x:Name="SubCategoryComboBox" Grid.Row="1"  Margin="10" VerticalAlignment="Top"
+            DisplayMemberPath="Name" 
+            SelectedValuePath="Id"
+            SelectionChanged="UpdateProductList" FontSize="18" BorderBrush="#FF5A00FF" FontFamily="Arial Black"/>
+
+      
+        
+
+        <Border BorderBrush="Black" Grid.Column="1" Grid.RowSpan="2"  Grid.Row="0" BorderThickness="1" Margin="2">
+            <ScrollViewer  VerticalScrollBarVisibility="Auto">
+
+                <ItemsControl x:Name="ItemsControl"  Background="#FFF7DAB6">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border x:Name="Stacww" BorderBrush="Black" BorderThickness="2" Margin="9">
+                                <StackPanel  Orientation="Vertical" OpacityMask="{x:Null}" Background="#FFF19EEE"  >
+
+                                    <Border Margin="2"  Height="300" Width="300" HorizontalAlignment="Center" BorderThickness="1" BorderBrush="Black">
+                                        <Image Source="{Binding Foto}" Height="500"   Margin="10" Stretch="Uniform"/>
+                                    </Border>
+                                    <TextBlock Text="{Binding Name}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" />
+                                    <TextBlock Text="{Binding Price, StringFormat={}{0} руб.}" FontSize="16" HorizontalAlignment="Center" />
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Button x:Name="Descriptio" Content="Подробнее"  Margin="10"
+                                      Click="Description_Click" FontFamily="Arial Black" FontSize="16"  Background="#FFC2F3F0" />
+                                        <Button Content="Заказать" Margin="10"  Click="OrderButton"  FontFamily="Arial Black" FontSize="16"  Background="#FFC2F3F0" />
+                                       
+                                    </StackPanel>
+                                    <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Button x:Name="Edit" Content="Редактировать" Visibility="{Binding EditButtonVisibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"  Margin="10"
+                                        Click="Edit_Click" FontFamily="Arial Black" FontSize="16"  Background="#FFC2F3F0" />
+                                        <Button x:Name="Delet" Content="Удалить" Visibility="{Binding DeletButtonVisibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Margin="10"
+                                        Click="Delet_Click" FontFamily="Arial Black" FontSize="16"  Background="#FFC2F3F0" Cursor="" />
+                                       
+                                    </StackPanel>
+                                   
+                                   
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+
+            </ScrollViewer>
+            
+        </Border>
+        <StackPanel Margin="10" Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button Content="Добавить платье" Name="AddDressButton" FontFamily="Arial Black" FontSize="16" Margin="10"  Background="#FFC2F3F0" Click="AddTovar"></Button>
+            <Button Content="Заказы" FontFamily="Arial Black" FontSize="16" Margin="10"  Background="#FFC2F3F0" Click="ZakazWindow"></Button>
+            <Button Content="Добавить пользователя" Name="AddUserButton" FontFamily="Arial Black" FontSize="16" Margin="10"  Background="#FFC2F3F0" Click="AddUser"></Button>
+            <Button Content="Пользователи" Name="UsersButton"  FontFamily="Arial Black" FontSize="16" Margin="10"  Background="#FFC2F3F0" Click="User"></Button>
+            <Button Content="Выход" FontFamily="Arial Black" FontSize="16" Margin="10" Click="ExitWindow" Background="#FFC2F3F0"></Button>
+           
+        </StackPanel>
+       
+    </Grid>
+</Window>
